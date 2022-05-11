@@ -33,4 +33,8 @@ public class SpringBootController {
         return "Hello " + user.getFirstName() + " " + user.getLastName();
     }
 
+    @PutMapping("/hello/{firstName}")
+    public String sayHello(@PathVariable String firstName, @RequestParam(value = "lastName") String lastName) {
+        return "Hello " + firstName + " " + lastName;
+    }
 }
