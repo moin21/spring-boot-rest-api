@@ -1,5 +1,6 @@
 package com.bridgelabz.springbootproject.controller;
 
+import com.bridgelabz.springbootproject.entity.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -25,4 +26,11 @@ public class SpringBootController {
     public String sayHello(@PathVariable String firstName) {
         return "Hello " + firstName;
     }
+
+    @PostMapping("/hello/post")
+    public String sayPost(@RequestBody User user) {
+
+        return "Hello " + user.getFirstName() + " " + user.getLastName();
+    }
+
 }
